@@ -41,26 +41,15 @@ int main()
 		b++;
 	}
 
-/*for (int i=1;i<=z;i++)
-{
-	cout << tab[i][3];
-}
-*/
-
-
 // mierzenie odleglosci od punktu K1
 	for (int x=1; x<=z; x++)
 	{
 		if (tab[x][3] == 1)
 		{
 			for (int i=1; i<=z; i++) 
-			{ 
-				for (int j=1; j<=z; j++) 
-				{
-					tab1[i]=sqrt(((tab[j][1]-tab[i][1])*(tab[j][1]-tab[i][1]))+((tab[j][2]-tab[i][2])*(tab[j][2]-tab[i][2])));
-				}
+			{ 	
+				tab1[i]=sqrt(((tab[i][1]-tab[x][1])*(tab[i][1]-tab[x][1]))+((tab[i][2]-tab[x][2])*(tab[i][2]-tab[x][2])));
 			}
-		//	cout << x << " ";
 		}
 	}
 	
@@ -70,29 +59,20 @@ int main()
 		if (tab[x][3] == 2)
 		{
 			for (int i=1; i<=z; i++) 
-			{ 
-				for (int j=1; j<=z; j++) 
-				{
-					tab2[i]=sqrt(((tab[j][1]-tab[i][1])*(tab[j][1]-tab[i][1]))+((tab[j][2]-tab[i][2])*(tab[j][2]-tab[i][2])));
-				}
+			{ 	
+				tab2[i]=sqrt(((tab[i][1]-tab[x][1])*(tab[i][1]-tab[x][1]))+((tab[i][2]-tab[x][2])*(tab[i][2]-tab[x][2])));
 			}
-		//	cout << x << " ";
 		}
 	}
-
 // mierzenie odleglosci od punktu K3	
-	for (int x=1; x<=z; x++)
+for (int x=1; x<=z; x++)
 	{
 		if (tab[x][3] == 3)
 		{
 			for (int i=1; i<=z; i++) 
-			{ 
-				for (int j=1; j<=z; j++) 
-				{
-					tab3[i]=sqrt(((tab[j][1]-tab[i][1])*(tab[j][1]-tab[i][1]))+((tab[j][2]-tab[i][2])*(tab[j][2]-tab[i][2])));
-				}
+			{ 	
+				tab3[i]=sqrt(((tab[i][1]-tab[x][1])*(tab[i][1]-tab[x][1]))+((tab[i][2]-tab[x][2])*(tab[i][2]-tab[x][2])));
 			}
-		//	cout << x << " ";
 		}
 	}
 	
@@ -102,13 +82,9 @@ int main()
 		if (tab[x][3] == 4)
 		{
 			for (int i=1; i<=z; i++) 
-			{ 
-				for (int j=1; j<=z; j++) 
-				{
-					tab4[i]=sqrt(((tab[j][1]-tab[i][1])*(tab[j][1]-tab[i][1]))+((tab[j][2]-tab[i][2])*(tab[j][2]-tab[i][2])));
-				}
+			{ 	
+				tab4[i]=sqrt(((tab[i][1]-tab[x][1])*(tab[i][1]-tab[x][1]))+((tab[i][2]-tab[x][2])*(tab[i][2]-tab[x][2])));
 			}
-		//	cout << x << " ";
 		}
 	}
 
@@ -118,46 +94,23 @@ int main()
 		if (tab[x][3] == 5)
 		{
 			for (int i=1; i<=z; i++) 
-			{ 
-				for (int j=1; j<=z; j++) 
-				{
-					tab5[i]=sqrt(((tab[j][1]-tab[i][1])*(tab[j][1]-tab[i][1]))+((tab[j][2]-tab[i][2])*(tab[j][2]-tab[i][2])));
-				}
+			{ 	
+				tab5[i]=sqrt(((tab[i][1]-tab[x][1])*(tab[i][1]-tab[x][1]))+((tab[i][2]-tab[x][2])*(tab[i][2]-tab[x][2])));
 			}
-		//	cout << x << " ";
 		}
 	}
 	
 	cout << tab1[0];
-/*	for (int i=1; i<=z; i++)
-	{
-		if (tab1[i]<tab2[i]) tabk1[i]=tab1[i];
-		else tabk1[i] = tab2[i]
-	}
-	
-	*/
 
-	for (int i=0; i<=z-1; i++)
+	int max = 0;
+	for (int i=1; i<=z; i++)
 	{
-		cout << tab1[i] << endl;
+		if (tab1[i]>max) max=tab1[i];
+		
 	}
-/*		for (int i=1; i<=z; i++)
-	{
-		cout << tab2[i] << endl;
-	}
-		for (int i=1; i<=z; i++)
-	{
-		cout << tab3[i] << endl;
-	}
-		for (int i=1; i<=z; i++)
-	{
-		cout << tab4[i] << endl;
-	}
-		for (int i=1; i<=z; i++)
-	{
-		cout << tab5[i] << endl;
-	}
-*/
+	cout << max;
+
+
 	getch();
 	return 0;
 }
