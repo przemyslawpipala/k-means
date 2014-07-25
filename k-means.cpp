@@ -10,8 +10,8 @@ double tab2[20];
 double tab3[20];
 double tab4[20];
 double tab5[20];
+int tabwynik[20];
 int z,c,a;
-int k1,k2,k3,k4,k5;
 int b=1;
 
 int main()
@@ -102,14 +102,60 @@ for (int x=1; x<=z; x++)
 	
 	cout << tab1[0];
 
-	int max = 0;
+	int min = 10000000;
 	for (int i=1; i<=z; i++)
 	{
-		if (tab1[i]>max) max=tab1[i];
-		
+		if (tab1[i] < min && tab1[i] > 0) 
+		{
+			min=tab1[i];
+			tabwynik[i]=1;	
+		}
+		if (tab2[i] < min && tab2[i] > 0) 
+		{
+			min=tab2[i];
+			tabwynik[i]=2;
+		}
+		if (tab3[i] < min && tab3[i] > 0) 
+		{		
+			min=tab3[i];
+			tabwynik[i]=3;
+		}
+		if (tab4[i] < min && tab4[i] > 0) 
+		{
+			min=tab4[i];
+			tabwynik[i]=4;
+		}
+		if (tab5[i] < min && tab5[i] > 0) 
+		{
+			min=tab5[i];
+			tabwynik[i]=5;
+		}
 	}
-	cout << max;
+	for (int i=1; i<z; i++)
+	{
+		if (tabwynik[i]==1)
+		{
+			cout << endl << "Punkt " << i << " o wspolrzednych (" << tab[i][1] << "," << tab[i][2] << ") nalezy do zbioru K1";
+		}
+		if (tabwynik[i]==2)
+		{
+			cout << endl << "Punkt " << i << " o wspolrzednych (" << tab[i][1] << "," << tab[i][2] << ") nalezy do zbioru K2";
+		}
+		if (tabwynik[i]==3)
+		{
+			cout << endl << "Punkt " << i << " o wspolrzednych (" << tab[i][1] << "," << tab[i][2] << ") nalezy do zbioru K3";
+		}
+		if (tabwynik[i]==4)
+		{
+			cout << endl << "Punkt " << i << " o wspolrzednych (" << tab[i][1] << "," << tab[i][2] << ") nalezy do zbioru K4";
+		}
+		if (tabwynik[i]==5)
+		{
+			cout << endl << "Punkt " << i << " o wspolrzednych (" << tab[i][1] << "," << tab[i][2] << ") nalezy do zbioru K5";
+		}
+	}
 
+	
 
 	getch();
 	return 0;
